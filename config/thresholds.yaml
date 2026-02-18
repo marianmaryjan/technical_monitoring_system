@@ -1,0 +1,11 @@
+temperature:
+  warning: 23.5
+  critical: 25.0
+
+pressure:
+  warning: 101.5
+  critical: 103.0
+
+vibration:
+  warning: 3.0
+  critical: 4.5
