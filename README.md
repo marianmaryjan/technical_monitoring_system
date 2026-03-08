@@ -19,7 +19,7 @@ technical_monitoring_system/
 ## Requirements
 
 - Python 3.14+
-- PyYAML library
+- Libraries: PyYAML, pandas, matplotlib
 
 ## How to run
 

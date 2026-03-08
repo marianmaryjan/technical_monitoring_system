@@ -10,7 +10,9 @@ def main():
         thresholds = yaml.safe_load(file)
     writer = csv_writer.CSVWriter()  # inicjalizacja CSVWriter
     # 2️⃣ generujemy kilka danych
-    data = simulator.generate_data(20)  # np. 5 wierszy danych
+    samples = 2000
+    samples_per_run = 200
+    data = simulator.generate_data(samples, samples_per_run)  # np. 5 wierszy danych
 
     for row in data:
         print("Sensor data:", row)
@@ -19,7 +21,8 @@ def main():
         print("-" * 40)
         writer.write_row(row)
     
-    visualize.plot_sensor_data("data/sensor_data.csv")
+    for run_id in range(samples // samples_per_run):
+        visualize.plot_sensor_data("data/sensor_data.csv", run_id=run_id)
 
 if __name__ == "__main__":
     main()
